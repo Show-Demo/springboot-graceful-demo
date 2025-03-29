@@ -62,3 +62,28 @@ server.shutdown=graceful要打开，不打开的话
 
 ![image-20250330002631545](README/image-20250330002631545.png)
 
+### ✅ **1：直接运行可执行文件**
+
+```dockerfile
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+```
+
+### ✅ 运行 shell 脚本**
+
+```dockerfile
+ENTRYPOINT ["/app/entrypoint.sh"]
+```
+
+### ❌ **情况 3：使用 `sh -c`**
+
+```dockerfile
+ENTRYPOINT ["sh", "-c", "java -jar /app/app.jar"]
+```
+
+## 参考文档
+
+- 面试官：SpringBoot如何优雅停机？  https://www.cnblogs.com/vipstone/p/18080968
+- Java服务如何优雅的上下线？  https://mp.weixin.qq.com/s/bb3mYDkudxdFe7yslWF3sg
+- Pod容器应用"优雅发布  https://www.cnblogs.com/kevingrace/p/13970331.html
+- 容器的 1 号进程  https://zhuanlan.zhihu.com/p/665241249
+- Docker 容器优雅终止方案  https://www.cnblogs.com/ryanyangcs/p/13036095.html
