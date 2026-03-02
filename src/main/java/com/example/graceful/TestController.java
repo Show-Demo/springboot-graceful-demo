@@ -14,4 +14,9 @@ public class TestController {
         System.out.println("Hello, world!");
         return "Hello, world!";
     }
+
+    @GetMapping("/health")
+    public String health() {
+        return "OK";
+    }
 }
